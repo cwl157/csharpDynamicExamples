@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <script>
+    function send() {
+        var book = { title: "The Grouchy Ladybug", author: "Eric Carle" };
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(book),
+            url: "api/books",
+            contentType: "application/json"
+        });
+    }
+    </script>
+    <div>
+        <button onclick="send()">Send Book</button>
+        
+    </div>
+</body>
+</html>
